@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Loan</title>
+    <link rel="stylesheet" href="{% static 'css/demo.css' %}" >
+<style>h1{
+ color:white;
+ background: red;  }
+ h2{
+ color:white;
+ background: blue;  }
+</style>
+</head>
+<body>
+<h1>Hello current time is:{{insert_time}}
+</h1>
+<h3>{{msg}}</h3>
+<h2>My name is:{{Name}}</h2>
+<h4><img src="{% static 'images/never.jpg' %}" alt=""></h4>
+<h5> The employees list is : </h5>
+{% if crop_list %}
+ <table>
+     <thead>
+     <th>NAME</th>
+     <th> city </th>
+     <th> Acres </th>
+
+     </thead>
+
+ {% for i in crop_list %}
+ <tr>
+ <td> {{i.NAME}}</td>
+ <td>{{i.city}}</td>
+ <td>{{i.Acres}}</td>
+
+ </tr>
+ {% endfor %}
+
+ </table>
+ {%else%}
+<p> No records found </p>
+ {% endif %}
+{%block baseblock%}
+{%endblock%}
+<a href="/loan" class="btn btn-primary btn-lg btn-success">Logout</a>
+
+</body>
+
+</html>
